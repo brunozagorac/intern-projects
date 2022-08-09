@@ -1,0 +1,24 @@
+#Running container out of image-id with volume attached and port mapping
+docker run -p 3000:3000 -v C:\Users\<local-path>:/<mount-point> <image-id>
+
+#Building Docker image using dockerfile
+docker build -t <image-name> -f <name>.dockerfile .
+
+#Start an interactive terminal(bash) session with the container <container-id>
+docker exec -it <container-id> /bin/bash
+
+docker start <container-id>
+
+docker stop <container-id>
+
+#save changes made to container environment to the new Docker image
+docker commit <container-id> grafana/grafana:customver2
+
+#copy file <filename> from the host to running container
+docker cp C:\Users\<filename> <container-id>:/etc/grafana/
+
+#list all available containers
+docker container ls -a
+
+#list all available images stored locally
+docker image ls 
